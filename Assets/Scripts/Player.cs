@@ -11,6 +11,9 @@ public class Player : MonoBehaviour
     private int Score;
     private const string ScoreKey = "Score";
     [SerializeField] AudioSource ballBounce;
+    public ParticleSystem BallDawn;
+    public ParticleSystem DestroyPlatform;
+    public ParticleSystem Win;
 
     private void Awake()
     {
@@ -37,6 +40,8 @@ public class Player : MonoBehaviour
     {
         Rigidbody.velocity = new Vector3(0, BounceSpeed, 0);
         ballBounce.Play();
+        BallDawn.Play();
+        DestroyPlatform.Play();
     }
 
     public void Die()
@@ -49,5 +54,6 @@ public class Player : MonoBehaviour
     {
         Game.OnPlayerReachFinish();
         Rigidbody.velocity = Vector3.zero;
+        Win.Play();
     }
 }

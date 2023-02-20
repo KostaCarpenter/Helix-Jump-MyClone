@@ -63,7 +63,7 @@ public class Game : MonoBehaviour
     {
         Win.SetActive(true);
         WinText.text = "You Win!";
-        Time.timeScale = 0;
+        Time.timeScale = 1;
     }
 
     public void SetLossCanvas()
