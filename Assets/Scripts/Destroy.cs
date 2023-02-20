@@ -9,10 +9,10 @@ public class Destroy : MonoBehaviour
     private Player player;
     [SerializeField] AudioSource BreakPlatform;
 
+
     private void Start()
     {
-        player = GetComponent<Player>();
-       
+        player = GetComponent<Player>();        
     }
 
     void OnCollisionEnter(Collision other)
@@ -22,9 +22,9 @@ public class Destroy : MonoBehaviour
             BreakPlatform.Play();
             Destroy(other.gameObject);
             player.setScore(1);
+            
         }
-
-        
+      
         
     }
     private void Update()
